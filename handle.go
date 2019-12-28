@@ -10,7 +10,7 @@ import (
 
 func handle(upd tgbotapi.Update) {
 	if upd.Message != nil {
-		if upd.Message.Sticker != nil && upd.Message.ReplyToMessage != nil {
+		if upd.Message.Sticker != nil && upd.Message.ReplyToMessage != nil && upd.Message.Sticker.SetName == "PoohSocialCredit" {
 			// get params
 			points := 0
 			switch hex.EncodeToString([]byte(upd.Message.Sticker.Emoji)) {
